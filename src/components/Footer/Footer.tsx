@@ -1,3 +1,10 @@
 export const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer className="footer">
+      <small>
+        <p>&copy; Copyright by up-vote</p>
+        <p>Demo project built with React + Typescript</p>
+      </small>
+    </footer>
+  );
 };
