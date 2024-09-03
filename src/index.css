@@ -209,7 +209,7 @@ textarea {
 
 textarea::selection {
   color: rgba(255, 255, 255, 0.85);
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 textarea::placeholder {
@@ -255,7 +255,7 @@ form div:last-child {
 form div:last-child p {
   font-weight: 500;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
 
