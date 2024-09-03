@@ -123,6 +123,20 @@ header {
   background-blend-mode: overlay;
 }
 
+.logo-container {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.logo-container img {
+  width: 40px;
+  padding-top: 5px;
+}
+
 /* HEADINGS */
 h1 {
   font-weight: 700;
@@ -159,7 +173,7 @@ h1 *::selection {
   margin-top: 20px;
   height: 123px;
   width: 470px;
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
@@ -168,7 +182,7 @@ h1 *::selection {
 
 .form:hover,
 .form:focus {
-  background-color: rgba(255, 255, 255, 0.055);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .form:focus-within {
@@ -212,7 +226,7 @@ label {
   top: 13.5px;
   left: 20px;
   color: #fff;
-  opacity: 0.42;
+  opacity: 0.32;
   pointer-events: none;
 }
 
