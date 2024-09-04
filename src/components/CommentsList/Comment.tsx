@@ -1,34 +1,26 @@
 import { TriangleUpIcon } from '@radix-ui/react-icons';
-
-interface Comment {
-  id: number;
-  votes: number;
-  badge: string;
-  companyName: string;
-  text: string;
-  days: number;
-}
+import { Comment as IComment } from '../../api/comments';
 
 interface CommentProps {
-  comment: Comment;
+  comment: IComment;
 }
 
 export const Comment = ({ comment }: CommentProps) => {
-  const { votes, badge, companyName, text, days } = comment;
+  const { upvoteCount, badgeLetter, company, text, daysAgo } = comment;
   return (
     <li className="feedback">
       <button>
         <TriangleUpIcon />
-        <span>{votes}</span>
+        <span>{upvoteCount}</span>
       </button>
       <div>
-        <p>{badge}</p>
+        <p>{badgeLetter}</p>
       </div>
       <div>
-        <p>{companyName}</p>
+        <p>{company}</p>
         <p>{text}</p>
       </div>
-      <p>{days}d</p>
+      <p>{daysAgo}d</p>
     </li>
   );
 };
