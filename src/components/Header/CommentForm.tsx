@@ -5,8 +5,10 @@ const MAX_TEXT_COUNT = 150;
 export const CommentForm = () => {
   const [text, setText] = useState('');
 
+  const hasValidTextLength = text.length <= MAX_TEXT_COUNT;
+
   return (
-    <form className={`form ${text.length > MAX_TEXT_COUNT ? 'form--invalid' : ''}`}>
+    <form className={`form ${hasValidTextLength ? '' : 'form--invalid'}`}>
       <textarea
         id="feedback-textarea"
         placeholder="feedback"
@@ -16,7 +18,9 @@ export const CommentForm = () => {
       />
       <label htmlFor="feedback-textarea">Enter your feedback here!</label>
       <div>
-        <p className="u-italic">{MAX_TEXT_COUNT - text.length}</p>
+        <p className="u-italic">
+          {text.length} / {MAX_TEXT_COUNT}
+        </p>
         <button>
           <span>Submit</span>
         </button>
