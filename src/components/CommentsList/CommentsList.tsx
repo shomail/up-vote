@@ -1,25 +1,30 @@
-import { TriangleUpIcon } from '@radix-ui/react-icons';
+import { Comment } from '.';
 
 export const CommentsList = () => {
+  const comments = [
+    {
+      id: 1,
+      votes: 10,
+      badge: 'G',
+      companyName: 'Google',
+      text: 'The best company I have ever worked for',
+      days: 2,
+    },
+    {
+      id: 2,
+      votes: 5,
+      badge: 'F',
+      companyName: 'Facebook',
+      text: 'It was a great experience',
+      days: 3,
+    },
+  ];
+
   return (
     <ol className="feedback-list">
-      <li className="feedback">
-        <button>
-          <TriangleUpIcon />
-          <span>539</span>
-        </button>
-        <div>
-          <p>B</p>
-        </div>
-        <div>
-          <p>Company Name</p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda blanditiis, dicta facere quisquam
-            laborum sint.
-          </p>
-        </div>
-        <p>4d</p>
-      </li>
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
+      ))}
     </ol>
   );
 };
