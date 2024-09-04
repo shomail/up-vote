@@ -46,6 +46,10 @@ button {
   font-style: italic;
 }
 
+.text-invalid {
+  color: #8a3d2c !important;
+}
+
 .u-transparent {
   color: rgba(255, 255, 255, 0.8);
 }

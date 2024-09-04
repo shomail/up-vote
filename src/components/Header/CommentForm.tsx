@@ -18,7 +18,7 @@ export const CommentForm = () => {
       />
       <label htmlFor="feedback-textarea">Enter your feedback here!</label>
       <div>
-        <p className="u-italic">
+        <p className={`u-italic ${!hasValidTextLength ? 'text-invalid' : ''}`}>
           {text.length} / {MAX_TEXT_COUNT}
         </p>
         <button>
