@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { Comment } from './types';
 
 const url = 'https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks';
 

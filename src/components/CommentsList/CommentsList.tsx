@@ -1,4 +1,4 @@
-import { Comment as CommentItem } from '.';
+import { Comment } from '.';
 import { useComments } from '../../api/comments';
 
 export const CommentsList = () => {
@@ -10,8 +10,8 @@ export const CommentsList = () => {
 
   return (
     <ol className="feedback-list">
-      {data.map((item) => (
-        <CommentItem key={item.id} comment={item} />
+      {data.map((comment) => (
+        <Comment key={comment.id} comment={comment} />
       ))}
     </ol>
   );
