@@ -12,3 +12,5 @@ export interface FeedbackResponse {
   sorted: boolean;
   feedbacks: Comment[];
 }
+
+export type CommentPayload = Omit<Comment, 'id'>;

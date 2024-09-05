@@ -3,7 +3,7 @@ import { FeedbackResponse, Comment } from './types';
 import { apiService } from '../lib';
 
 const fetchComments = async (): Promise<Comment[]> => {
-  const response = await apiService<FeedbackResponse>({ method: 'GET', url: '/feedback' });
+  const response = await apiService<FeedbackResponse>({ method: 'GET', url: '/feedbacks' });
   return response.feedbacks;
 };
 
