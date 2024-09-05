@@ -20,7 +20,7 @@ export const Comment = ({ comment }: CommentProps) => {
         <p>{company}</p>
         <p>{text}</p>
       </div>
-      <p>{daysAgo}d</p>
+      <p>{daysAgo === 0 ? 'Just now' : `${daysAgo}d`}</p>
     </li>
   );
 };

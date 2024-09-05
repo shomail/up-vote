@@ -9,7 +9,10 @@ export const CommentsList = () => {
     <ol className="feedback-list">
       {error && <div className="error-message">{error.message}</div>}
       {isLoading && <Spinner />}
-      {data && data.map((comment) => <Comment key={comment.id} comment={comment} />)}
+      {data &&
+        [...data]
+          .sort((a, b) => (a.id > b.id ? -1 : 1))
+          .map((comment) => <Comment key={comment.id} comment={comment} />)}
     </ol>
   );
 };
