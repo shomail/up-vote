@@ -11,6 +11,10 @@ export const apiService = async <T>({ method, url, payload }: APIService): Promi
     const res = await fetch(`${BASE_URL}${url}`, {
       method,
       body: JSON.stringify(payload),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     });
     if (!res.ok) {
       throw new Error();
