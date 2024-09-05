@@ -6,3 +6,9 @@ export interface Comment {
   text: string;
   daysAgo: number;
 }
+
+export interface FeedbackResponse {
+  public: boolean;
+  sorted: boolean;
+  feedbacks: Comment[];
+}

@@ -683,3 +683,12 @@ h1 > span {
     padding: 0 15px;
   }
 }
+
+.error-message {
+  color: #8a3d2c;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85%;
+}
