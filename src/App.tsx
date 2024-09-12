@@ -12,7 +12,7 @@ function App() {
       <div className="app">
         <Footer />
         <Container activeTag={activeTag} />
-        <TagsList handleTagClick={(tag: string) => setActiveTag(tag)} />
+        <TagsList handleTagClick={(tag: string) => setActiveTag(tag)} activeTag={activeTag} />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

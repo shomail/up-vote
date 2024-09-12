@@ -1,11 +1,14 @@
 import { useMemo } from 'react';
 import { useComments } from '../../api/comments';
+import ClearButton from './ClearButton';
+import TagButton from './TagButton';
 
 interface TagListProps {
   handleTagClick: (tag: string) => void;
+  activeTag: string;
 }
 
-export const TagsList = ({ handleTagClick }: TagListProps) => {
+export const TagsList = ({ handleTagClick, activeTag }: TagListProps) => {
   const { data, error } = useComments();
 
   const tags = useMemo(() => {
@@ -24,10 +27,15 @@ export const TagsList = ({ handleTagClick }: TagListProps) => {
   return (
     <ul className="hashtags">
       {tags.map((tag) => (
-        <li key={tag.id}>
-          <button onClick={() => handleTagClick(tag.company)}>{tag.company}</button>
-        </li>
+        <TagButton tag={tag.company} handleClick={handleTagClick} />
       ))}
+
+      {activeTag && (
+        <>
+          <hr style={{ margin: '10px 0', borderColor: 'rgba(0,0,0,0.1)' }} />
+          <ClearButton handleTagClick={handleTagClick} />
+        </>
+      )}
     </ul>
   );
 };
