@@ -1,10 +1,14 @@
 import { Header, CommentsList } from '../';
 
-export const Container = () => {
+interface ContainerProps {
+  activeTagId: number | null;
+}
+
+export const Container = ({ activeTagId }: ContainerProps) => {
   return (
     <div className="container">
       <Header />
-      <CommentsList />
+      <CommentsList activeTagId={activeTagId} />
     </div>
   );
 };
