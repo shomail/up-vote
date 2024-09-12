@@ -3,10 +3,10 @@ import { useComments } from '../../api/comments';
 import { Spinner } from '../Spinner';
 
 interface CommentsListProps {
-  activeTagId: number | null;
+  activeTag: string;
 }
 
-export const CommentsList = ({ activeTagId }: CommentsListProps) => {
+export const CommentsList = ({ activeTag }: CommentsListProps) => {
   const { data, isLoading, error } = useComments();
 
   return (
@@ -16,7 +16,7 @@ export const CommentsList = ({ activeTagId }: CommentsListProps) => {
       {data &&
         [...data]
           .sort((a, b) => (a.id > b.id ? -1 : 1))
-          .filter((comment) => activeTagId === null || comment.id === activeTagId)
+          .filter((comment) => (activeTag ? activeTag === comment.company : true))
           .map((comment) => <Comment key={comment.id} comment={comment} />)}
     </ol>
   );

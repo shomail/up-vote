@@ -1,7 +1,7 @@
 import { useComments } from '../../api/comments';
 
 interface TagListProps {
-  handleTagClick: (tag: number) => void;
+  handleTagClick: (tag: string) => void;
 }
 
 export const TagsList = ({ handleTagClick }: TagListProps) => {
@@ -23,7 +23,7 @@ export const TagsList = ({ handleTagClick }: TagListProps) => {
     <ul className="hashtags">
       {tags.map((tag) => (
         <li key={tag.id}>
-          <button onClick={() => handleTagClick(tag.id)}>{tag.company}</button>
+          <button onClick={() => handleTagClick(tag.company)}>{tag.company}</button>
         </li>
       ))}
     </ul>

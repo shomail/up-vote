@@ -6,13 +6,13 @@ import { useState } from 'react';
 const queryClient = new QueryClient();
 
 function App() {
-  const [activeTagId, setActiveTagId] = useState<number | null>(null);
+  const [activeTag, setActiveTag] = useState('');
   return (
     <QueryClientProvider client={queryClient}>
       <div className="app">
         <Footer />
-        <Container activeTagId={activeTagId} />
-        <TagsList handleTagClick={(tagId: number) => setActiveTagId(tagId)} />
+        <Container activeTag={activeTag} />
+        <TagsList handleTagClick={(tag: string) => setActiveTag(tag)} />
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
